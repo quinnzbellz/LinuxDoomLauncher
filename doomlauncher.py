@@ -18,7 +18,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.box1.append(self.box2) 
         self.box1.append(self.box3)  
         self.button = Gtk.Button(label="Lift Off!")
-        self.box1.append(self.button)
+        self.box2.append(self.button)
         self.button.connect('clicked', self.gzdoom)
     
     def gzdoom(self, button):
