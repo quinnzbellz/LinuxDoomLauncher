@@ -14,16 +14,26 @@ class MainWindow(Gtk.ApplicationWindow):
         self.box1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.box2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.box3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.box4 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.box5 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.set_child(self.box1)
         self.box1.append(self.box2) 
         self.box1.append(self.box3)  
         self.open_button = Gtk.Button(label="Open PK3 #1")
         self.box3.append(self.open_button)
-        self.open_dialog = Gtk.FileChooserNative.new(title="Choose a PK3", 
+        self.open_dialog = Gtk.FileChooserNative.new(title="Choose a PK3/PWAD", 
                                                      parent=self, action=Gtk.FileChooserAction.OPEN)
         
         self.open_dialog.connect("response", self.open_response)
         self.open_button.connect("clicked", self.show_open_dialog)
+
+        self.open_button1 = Gtk.Button(label="Open PK3 #2")
+        self.box3.append(self.open_button1)
+        self.open_dialog1 = Gtk.FileChooserNative.new(title="Choose a PK3/PWAD", 
+                                                     parent=self, action=Gtk.FileChooserAction.OPEN)
+        
+        self.open_dialog1.connect("response", self.open_response1)
+        self.open_button1.connect("clicked", self.show_open_dialog1)
 
 
         self.button = Gtk.Button(label="Lift Off!")
@@ -39,9 +49,21 @@ class MainWindow(Gtk.ApplicationWindow):
             global filename
             filename = file.get_path()
     
+    def show_open_dialog1(self, button):
+        self.open_dialog1.show()
+    
+    def open_response1(self, dialog, response):
+        if response == Gtk.ResponseType.ACCEPT:
+            file = dialog.get_file()
+            global pk32
+            pk32 = file.get_path()
+
+    
     def gzdoom(self, button):
-        print('gzdoom -file' + ' ' + filename)
-        os.system('gzdoom -file' + ' ' + filename)
+        try: pk32
+        except NameError: os.system('gzdoom -file' + ' ' + filename)
+        else:
+            os.system('gzdoom -file' + ' ' + filename + ' ' + '-file' + ' ' + pk32)
 
     
 class MyApp(Adw.Application):
