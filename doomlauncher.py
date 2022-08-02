@@ -7,6 +7,7 @@ from gi.repository import Gtk
 
 def on_activate(app):
     win = Gtk.ApplicationWindow(application=app)
+    win = Gtk.Window(title="Linux Doom Launcher")
     btn = Gtk.Button(label="Lift Off!")
     btn.connect('clicked', lambda x: os.system("gzdoom"))
     win.set_child(btn)
