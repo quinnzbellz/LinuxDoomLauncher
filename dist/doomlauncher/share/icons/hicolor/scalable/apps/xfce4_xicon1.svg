@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   id="svg2942"
+   sodipodi:version="0.32"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   version="1.0"
+   sodipodi:docname="xfce4_xicon1.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs2944" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="10.556063"
+     inkscape:cx="2.5431368"
+     inkscape:cy="26.382372"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     width="128px"
+     height="128px"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="2560"
+     inkscape:window-y="34"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2947">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+        <dc:date />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:publisher>
+        <dc:identifier />
+        <dc:source />
+        <dc:relation />
+        <dc:language />
+        <dc:subject>
+          <rdf:Bag />
+        </dc:subject>
+        <dc:coverage />
+        <dc:description />
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:contributor>
+        <cc:license
+           rdf:resource="" />
+      </cc:Work>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path28"
+       style="fill:#51a2da;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+       d="m 23.991407,4.531191 c -10.764792,0 -19.491884,8.722911 -19.500114,19.486675 v 15.090729 c 0.0061,2.443085 1.98758,4.422594 4.433108,4.422594 0.0061,0 0.01538,-7.5e-4 0.02101,-7.5e-4 v 7.5e-4 h 15.05268 c 10.766014,-0.0051 19.493203,-8.73265 19.493203,-19.499743 0,-10.769503 -8.730453,-19.499998 -19.500118,-19.499998 z m 3.952976,8.023342 v 2.56e-4 c 3.274747,0 6.367243,2.510988 6.367243,5.969324 0,0.320804 -0.0035,0.639713 -0.05483,1.00464 -0.09061,0.919777 -0.93071,1.578964 -1.845958,1.449053 -0.916156,-0.131192 -1.538279,-0.998747 -1.36804,-1.907865 0.01435,-0.102493 0.02101,-0.26597 0.02101,-0.545828 0,-1.960444 -1.60157,-2.718281 -3.119652,-2.718281 -1.517175,0 -2.88477,1.272457 -2.889956,2.714591 v 4.992149 l 2.814873,-0.0205 c 2.19749,-0.04612 2.219978,3.266622 0.02255,3.251043 l -2.837351,0.01537 -0.0205,4.657048 c -0.339565,3.655122 -3.451479,6.578441 -7.189949,6.578441 -3.962391,0 -7.231194,-3.241458 -7.231194,-7.213594 0.119305,-4.08621 3.384515,-7.299329 7.486329,-7.260843 l 2.284847,-0.01537 v 3.246122 l -2.303865,0.0205 c -2.254851,0.06662 -4.18279,1.595671 -4.219719,4.010058 0,2.20115 1.779106,3.962603 3.984837,3.962603 2.203599,0 3.962857,-1.602998 3.962857,-3.957887 V 18.50633 c 10e-4,-0.227535 0.01179,-0.409974 0.03793,-0.661339 C 22.21621,14.8406 24.902524,12.5511 27.943875,12.5511 Z" />
+  </g>
+</svg>

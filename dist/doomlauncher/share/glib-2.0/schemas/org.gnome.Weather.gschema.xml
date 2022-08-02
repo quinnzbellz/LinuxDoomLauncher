@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="org.gnome.Weather">
+  <schema id="org.gnome.Weather" path="/org/gnome/Weather/">
+    <key name="locations" type="av">
+      <default>[]</default>
+      <summary>Configured cities to show weather for</summary>
+      <description>
+        The locations shown in the world view of gnome-weather. Each value is a
+        GVariant returned by gweather_location_serialize().
+      </description>
+    </key>
+  </schema>
+</schemalist>

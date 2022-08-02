@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="connections">
+	<schema id="org.gnome.Connections" path="/org/gnome/Connections/">
+      <key name="first-run" type="b">
+        <default>true</default>
+        <summary>First run</summary>
+        <description>
+          Whether Connections is running for the first time
+        </description>
+      </key>
+	</schema>
+</schemalist>
