@@ -36,11 +36,14 @@ class MainWindow(Gtk.ApplicationWindow):
     def open_response(self, dialog, response):
         if response == Gtk.ResponseType.ACCEPT:
             file = dialog.get_file()
+            global filename
             filename = file.get_path()
     
     def gzdoom(self, button):
-        os.system("gzdoom -file".format(filename))
+        print('gzdoom -file' + ' ' + filename)
+        os.system('gzdoom -file' + ' ' + filename)
 
+    
 class MyApp(Adw.Application):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
