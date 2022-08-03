@@ -35,6 +35,15 @@ class MainWindow(Gtk.ApplicationWindow):
         self.open_dialog1.connect("response", self.open_response1)
         self.open_button1.connect("clicked", self.show_open_dialog1)
 
+        self.open_button2 = Gtk.Button(label="Open PK3 #3")
+        self.box3.append(self.open_button2)
+        self.open_dialog2 = Gtk.FileChooserNative.new(title="Choose a PK3/PWAD", 
+                                                     parent=self, action=Gtk.FileChooserAction.OPEN)
+        
+        self.open_dialog2.connect("response", self.open_response2)
+        self.open_button2.connect("clicked", self.show_open_dialog2)
+
+
 
         self.button = Gtk.Button(label="Lift Off!")
         self.box2.append(self.button)
@@ -57,13 +66,24 @@ class MainWindow(Gtk.ApplicationWindow):
             file = dialog.get_file()
             global pk32
             pk32 = file.get_path()
+    
+    def show_open_dialog2(self, button):
+        self.open_dialog2.show()
+    
+    def open_response2(self, dialog, response):
+        if response == Gtk.ResponseType.ACCEPT:
+            file = dialog.get_file()
+            global pk33
+            pk33 = file.get_path()
 
     
     def gzdoom(self, button):
-        try: pk32
+        try: pk32 
         except NameError: os.system('gzdoom -file' + ' ' + filename)
+        try: pk33
+        except NameError: os.system('gzdoom -file' + ' ' + filename + ' ' + '-file' + ' ' + pk32)
         else:
-            os.system('gzdoom -file' + ' ' + filename + ' ' + '-file' + ' ' + pk32)
+            os.system('gzdoom -file' + ' ' + filename + ' ' + '-file' + ' ' + pk32 + ' ' + '-file' + ' ' + pk33)
 
     
 class MyApp(Adw.Application):
