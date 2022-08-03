@@ -55,8 +55,8 @@ class MainWindow(Gtk.ApplicationWindow):
     def open_response(self, dialog, response):
         if response == Gtk.ResponseType.ACCEPT:
             file = dialog.get_file()
-            global filename
-            filename = file.get_path()
+            global pk3
+            pk3 = file.get_path()
     
     def show_open_dialog1(self, button):
         self.open_dialog1.show()
@@ -78,14 +78,28 @@ class MainWindow(Gtk.ApplicationWindow):
 
     
     def gzdoom(self, button):
-        try: pk32 
-        except NameError: os.system('gzdoom -file' + ' ' + filename)
-        try: pk33
-        except NameError: os.system('gzdoom -file' + ' ' + filename + ' ' + '-file' + ' ' + pk32)
+        s = ' '
+        f = "-file"
+        if 'pk3' and 'pk32' and 'pk33' in globals():
+            os.system('gzdoom -file' + s + pk3 + s + f + s + pk32 + s + f + s + pk33)
         else:
-            os.system('gzdoom -file' + ' ' + filename + ' ' + '-file' + ' ' + pk32 + ' ' + '-file' + ' ' + pk33)
+            if  'pk33' and 'pk32' in globals():
+                os.system('gzdoom -file' + s + pk32 + s + f + s + pk33)
+            elif 'pk32' and 'pk3' in globals():
+                os.system('gzdoom -file' + s + pk3 + s + f + s + pk32)
+            elif 'pk3' and 'pk33' in globals():
+                os.system('gzdoom -file' + s + pk3 + s + f + s + pk33)
+            elif 'pk33' in globals():
+                os.system('gzdoom -file' + s + pk33)
+            elif 'pk32' in globals():
+                os.system('gzdoom -file' + s + pk32)
+            elif 'pk3' in globals():
+                os.system('gzdoom -file' + s + pk3)
+            else:
+                os.system('gzdoom')
+        
+        
 
-    
 class MyApp(Adw.Application):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
