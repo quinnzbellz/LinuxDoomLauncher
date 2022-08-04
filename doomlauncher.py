@@ -80,23 +80,17 @@ class MainWindow(Gtk.ApplicationWindow):
     def gzdoom(self, button):
         s = ' '
         f = "-file"
-        if 'pk3' and 'pk32' and 'pk33' in globals():
-            os.system('gzdoom -file' + s + pk3 + s + f + s + pk32 + s + f + s + pk33)
-        else:
-            if  'pk33' and 'pk32' in globals():
-                os.system('gzdoom -file' + s + pk32 + s + f + s + pk33)
-            elif 'pk32' and 'pk3' in globals():
-                os.system('gzdoom -file' + s + pk3 + s + f + s + pk32)
-            elif 'pk3' and 'pk33' in globals():
-                os.system('gzdoom -file' + s + pk3 + s + f + s + pk33)
-            elif 'pk33' in globals():
-                os.system('gzdoom -file' + s + pk33)
-            elif 'pk32' in globals():
-                os.system('gzdoom -file' + s + pk32)
-            elif 'pk3' in globals():
-                os.system('gzdoom -file' + s + pk3)
+        gzdoom = "gzdoom -file"
+        if 'pk3' in globals():
+            if 'pk32' in globals():
+                if 'pk33' in globals():
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33)
+                else:
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32)
             else:
-                os.system('gzdoom')
+                os.system(gzdoom + s + pk3)
+        else:
+            os.system('gzdoom')
         
         
 
