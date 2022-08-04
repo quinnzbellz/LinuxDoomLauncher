@@ -84,13 +84,17 @@ class MainWindow(Gtk.ApplicationWindow):
         if 'pk3' in globals():
             if 'pk32' in globals():
                 if 'pk33' in globals():
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33)
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33 + s + '&')
+                    quit()
                 else:
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32)
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + '&')
+                    quit()
             else:
-                os.system(gzdoom + s + pk3)
+                os.system(gzdoom + s + pk3 + s + '&')
+                quit()
         else:
-            os.system('gzdoom')
+            os.system('gzdoom' + s + '&')
+            quit()
         
         
 
