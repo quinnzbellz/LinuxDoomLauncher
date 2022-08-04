@@ -11,11 +11,11 @@ class MainWindow(Gtk.ApplicationWindow):
         super().__init__(*args, **kwargs)
         self.set_default_size(640, 480)
         self.set_title("Linux Doom Launcher")
-        self.box1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.box2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.box3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.box4 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.box5 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.box1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.box2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.box3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.box4 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.box5 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.set_child(self.box1)
         self.box1.append(self.box2) 
         self.box1.append(self.box3)  
@@ -42,7 +42,10 @@ class MainWindow(Gtk.ApplicationWindow):
         
         self.open_dialog2.connect("response", self.open_response2)
         self.open_button2.connect("clicked", self.show_open_dialog2)
-
+        
+        self.display = Gtk.Entry()
+        self.display.set_placeholder_text("Display ie: 0,1,2")
+        self.box3.append(self.display)
 
 
         self.button = Gtk.Button(label="Lift Off!")
@@ -81,19 +84,21 @@ class MainWindow(Gtk.ApplicationWindow):
         s = ' '
         f = "-file"
         gzdoom = "gzdoom -file"
+        m = self.display.get_text()
+        v= "-vid_adapter"
         if 'pk3' in globals():
             if 'pk32' in globals():
                 if 'pk33' in globals():
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33 + s + '&')
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33 + s + v + s + m + s +'&')
                     quit()
                 else:
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + '&')
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + v + s + m + s + '&')
                     quit()
             else:
-                os.system(gzdoom + s + pk3 + s + '&')
+                os.system(gzdoom + s + pk3 + s + v + s + m + s + '&')
                 quit()
         else:
-            os.system('gzdoom' + s + '&')
+            os.system('gzdoom' + s + v + s + m + s + '&')
             quit()
         
         
