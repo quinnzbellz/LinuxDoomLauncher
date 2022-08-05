@@ -9,7 +9,7 @@ from gi.repository import Gtk, Adw
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.set_default_size(640, 480)
+        self.set_default_size(500, 500)
         self.set_title("Linux Doom Launcher")
         self.box1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.box2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
