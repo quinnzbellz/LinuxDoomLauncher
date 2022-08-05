@@ -85,7 +85,7 @@ class MainWindow(Gtk.ApplicationWindow):
         f = "-file"
         gzdoom = "gzdoom -file"
         m = self.display.get_text()
-        v= "-vid_adapter"
+        v = "-vid_adapter"
         if 'pk3' in globals():
             if 'pk32' in globals():
                 if 'pk33' in globals():
