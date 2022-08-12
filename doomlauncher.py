@@ -14,11 +14,13 @@ class MainWindow(Gtk.ApplicationWindow):
         self.box1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.box2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.box3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
-        self.box4 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
-        self.box5 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.box4 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        self.box5 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
         self.set_child(self.box1)
         self.box1.append(self.box2) 
         self.box1.append(self.box3)  
+        self.box1.append(self.box4)
+        self.box1.append(self.box5)
         self.open_button = Gtk.Button(label="Open PK3 #1")
         self.box3.append(self.open_button)
         self.open_dialog = Gtk.FileChooserNative.new(title="Choose a PK3/PWAD", 
@@ -46,6 +48,10 @@ class MainWindow(Gtk.ApplicationWindow):
         self.display = Gtk.Entry()
         self.display.set_placeholder_text("Display ie: 0,1,2")
         self.box3.append(self.display)
+
+        self.display1 = Gtk.Entry()
+        self.display1.set_placeholder_text("Width")
+        self.box4.append(self.display1)
 
 
         self.button = Gtk.Button(label="Lift Off!")
