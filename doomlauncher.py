@@ -9,13 +9,13 @@ from gi.repository import Gtk, Adw
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.set_default_size(500, 500)
+        self.set_default_size(400, 350)
         self.set_title("Linux Doom Launcher")
         self.box1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.box2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.box3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.box4 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
-        self.box5 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        self.box5 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.set_child(self.box1)
         self.box1.append(self.box2) 
         self.box1.append(self.box3)  
@@ -52,10 +52,14 @@ class MainWindow(Gtk.ApplicationWindow):
         self.display1 = Gtk.Entry()
         self.display1.set_placeholder_text("Width")
         self.box4.append(self.display1)
+        
+        self.display2 = Gtk.Entry()
+        self.display2.set_placeholder_text("Height")
+        self.box4.append(self.display2)
 
 
         self.button = Gtk.Button(label="Lift Off!")
-        self.box2.append(self.button)
+        self.box5.append(self.button)
         self.button.connect('clicked', self.gzdoom)
 
     def show_open_dialog(self, button):
