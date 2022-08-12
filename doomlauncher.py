@@ -96,19 +96,23 @@ class MainWindow(Gtk.ApplicationWindow):
         gzdoom = "gzdoom -file"
         m = self.display.get_text()
         v = "-vid_adapter"
+        w = "-width"
+        h = "-height"
+        w1 = self.display1.get_text()
+        h1 = self.display2.get_text()
         if 'pk3' in globals():
             if 'pk32' in globals():
                 if 'pk33' in globals():
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33 + s + v + s + m + s +'&')
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
                     quit()
                 else:
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + v + s + m + s + '&')
+                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
                     quit()
             else:
-                os.system(gzdoom + s + pk3 + s + v + s + m + s + '&')
+                os.system(gzdoom + s + pk3 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
                 quit()
         else:
-            os.system('gzdoom' + s + v + s + m + s + '&')
+            os.system('gzdoom' + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
             quit()
         
         
