@@ -10,3 +10,6 @@ Here's a couple screenshots of LDL.
 ![Main Screen](/images/Screenshot%20from%202022-08-13%2013-04-55.png)
 
 ![File Picker](/images/Screenshot%20from%202022-08-13%2013-10-41.png)
+
+## Note About Issues
+Before creating an issue, please check [TODO.md](/TODO.md). If what you want to open an issue about isn't there, go ahead! If you want to tackle something on the TODO list, feel free, just open a pull request once you've finished working on it. 
