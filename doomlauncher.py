@@ -44,6 +44,14 @@ class MainWindow(Gtk.ApplicationWindow):
         
         self.open_dialog2.connect("response", self.open_response2)
         self.open_button2.connect("clicked", self.show_open_dialog2)
+
+        self.open_button3 = Gtk.Button(label="Open Alternative GZDoom Executable")
+        self.box3.append(self.open_button3)
+        self.open_dialog3 = Gtk.FileChooserNative.new(title="Choose GZDoom Binary", 
+                                                     parent=self, action=Gtk.FileChooserAction.OPEN)
+                                
+        self.open_dialog3.connect("response", self.open_response3)
+        self.open_button3.connect("clicked", self.show_open_dialog3)
         
         self.display = Gtk.Entry()
         self.display.set_placeholder_text("Display ie: 0,1,2")
@@ -88,12 +96,26 @@ class MainWindow(Gtk.ApplicationWindow):
             file = dialog.get_file()
             global pk33
             pk33 = file.get_path()
+    
+    def show_open_dialog3(self, button):
+        self.open_dialog3.show()
+    
+    def open_response3(self, dialog, response):
+        if response == Gtk.ResponseType.ACCEPT:
+            file = dialog.get_file()
+            global gzdoom
+            gzdoom = file.get_path()
 
     
     def gzdoom(self, button):
+        try:
+            print(gzdoom)
+        except NameError:
+            doom = "gzdoom"
+        else:
+            doom = gzdoom
         s = ' '
         f = "-file"
-        gzdoom = "gzdoom -file"
         m = self.display.get_text()
         v = "-vid_adapter"
         w = "-width"
@@ -103,17 +125,13 @@ class MainWindow(Gtk.ApplicationWindow):
         if 'pk3' in globals():
             if 'pk32' in globals():
                 if 'pk33' in globals():
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + f + s + pk33 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
-                    quit()
+                    os.system(doom + s + f + s + pk3 + s + f + s + pk32 + s + f + s + pk33 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
                 else:
-                    os.system(gzdoom + s + pk3 + s + f + s + pk32 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
-                    quit()
+                    os.system(doom + s + f + s + pk3 + s + f + s + pk32 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
             else:
-                os.system(gzdoom + s + pk3 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
-                quit()
+                os.system(doom + s + f + s + pk3 + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
         else:
-            os.system('gzdoom' + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
-            quit()
+            os.system(doom + s + v + s + m + s + w + s + w1 + s + h + s + h1 + s + '&')
         
         
 
